@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 const express = require('express');
 const session = require('express-session');
 require('dotenv').config()
@@ -30,8 +31,7 @@ const custSchema = mongoose.Schema({
     fname: String,
     lname: String,
     dob: {
-        type: Date,
-        default: Date.now
+        type: Date
     },
     location: String,
     phno: Number,
@@ -55,5 +55,27 @@ app.use(session({
         expires: null
     }
 }));
+
+app.post('/api/register', function(req, res){
+    if(req.body.pass1 === req.body.pass2){
+        let hash = bcrypt.hashSync(req.body.pass1, 10);
+        let data = {
+            fname: req.body.fname,
+            lname: req.body.lname,
+            dob: req.body.dob,
+            location: req.body.location,
+            phno: req.body.phno,
+            email: req.body.email,
+            password: hash,
+            gender: req.body.gender
+        };
+        customer.create(data, (err, doc) => {
+            if(err) res.send(err);
+            else res.json(doc);
+        });
+    }else{
+        res.json("pass");
+    }
+});
 
 const server = app.listen(port, () => console.log("Listening to http://localhost:" + port));

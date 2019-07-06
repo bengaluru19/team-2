@@ -1,0 +1,47 @@
+<h3>Please fill out the registration form</h3>
+<br>
+<form ng-submit="register()">
+    <div class="input-field lighten-6">
+    <input id="fname" name="fname" type="text" class="validate" ng-model="fname">
+    <label for="fname">First Name</label>
+    </div>
+    <div class="input-field lighten-6">
+    <input id="lname" name="lname" type="text" class="validate" ng-model="lname">
+    <label for="lname">Last Name</label>
+    </div><br>
+    <div class="input-field lighten-6">
+    <input id="dob" name="dob" type="date" class="validate" ng-model="dob">
+    <label for="dob">Data of Birth</label>
+    </div>
+    <div class="input-field lighten-6">
+    <input id="location" name="location" type="text" class="validate" ng-model="location">
+    <label for="location">Location</label>
+    </div>
+    <div class="input-field lighten-6">
+    <input id="phno" name="phno" type="text" class="validate" ng-model="phno">
+    <label for="phno">Phone Number</label>
+    </div>
+    <div class="input-field lighten-6">
+    <input id="email" name="email" type="text" class="validate" ng-model="email">
+    <label for="email">Email</label>
+    </div>
+    <div class="input-field lighten-6">
+    <input id="pass1" name="pass1" type="text" class="validate" ng-model="pass1">
+    <label for="pass1">Password</label>
+    </div>
+    <div class="input-field lighten-6">
+    <input id="pass2" name="pass2" type="text" class="validate" ng-model="pass2">
+    <label for="pass2">Confirm Password</label>
+    </div>
+    <div ng-if="errMatch">
+        <span class="red-text">Passwords Do not Match</span>
+    </div>
+    <label>Select Your Gender</label>
+    <select class="browser-default" ng-model="gender" name="gender">
+    <option value="" disabled selected>Choose your option</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+    </select><br>
+    <button type="submit" class="btn waves-effect waves-light" ng-model="uploading">Register</button>
+</form>

@@ -6,7 +6,7 @@ myApp.config(function($routeProvider){
             controller: 'appController'
         })
         .when('/user/register', {
-            templateUrl: 'templates/login.html',
+            templateUrl: 'templates/register.html',
             controller: 'appController'
         })
         .otherwise({
