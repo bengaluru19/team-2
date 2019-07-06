@@ -27,6 +27,15 @@ mongoose.connect(url, auth, function(err) {
     }
 });
 
+const vendorSchema = mongoose.Schema({
+    category: String,
+    fname: String,
+    lname: String,
+    address: String,
+    phno: Number,
+    pin: Number
+});
+
 const custSchema = mongoose.Schema({
     fname: String,
     lname: String,
@@ -41,6 +50,7 @@ const custSchema = mongoose.Schema({
 });
 
 const customer = mongoose.model('customer', custSchema);
+const vendor = mongoose.model('vendors', vendorSchema);
 
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
@@ -76,6 +86,20 @@ app.post('/api/register', function(req, res){
     }else{
         res.json("pass");
     }
+});
+
+app.get('/api/getCats', function(req, res) {
+    vendor.find((err, doc) => {
+        if(err) res.send(err);
+        else res.json(doc);
+    });
+});
+
+app.get('/api/getSelectedCat/:cat', (req, res) => {
+    vendor.find({category: req.params.cat}, (err, doc) => {
+        if(err) res.send(err);
+        else res.json(doc); 
+    });
 });
 
 const server = app.listen(port, () => console.log("Listening to http://localhost:" + port));

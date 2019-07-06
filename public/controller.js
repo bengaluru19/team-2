@@ -26,3 +26,30 @@ myApp.controller('appController', function($scope, $http, $route){
         });
     }
 });
+
+myApp.controller('loginController', function($scope, $http, $route, $routeParams){
+    $scope.locRange = 1;
+
+    $scope.checkCat = function() {
+        $http.get('/api/getCats').then(res => {
+            const catData = res.data;
+
+            let mappedData = catData.map((cat) => {
+                return cat.category
+            });
+            
+            let filteredData = mappedData.filter((v, i) => mappedData.indexOf(v) === i);
+
+            $scope.filteredCatData = filteredData;
+        });
+    }
+
+    $scope.catSelected = function(){
+        const cat = $routeParams.cat;
+        const range = $routeParams.range;
+
+        $http.get('/api/getSelectedCat/' + cat).then(res => {
+            $scope.catSelected = res.data;
+        });
+    }
+});

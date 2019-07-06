@@ -1,0 +1,37 @@
+<div ng-init="catSelected()">
+    <div class="row">
+        <div class="col s12 m6" ng-repeat="cat in catSelected">
+            <div class="card">
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span style="color: grey;">Vendor Name:</span> {{cat.fname}}<i class="material-icons right">more_vert</i></span>
+                <p><span></span>Rating: {{cat.rating}}</p>
+            </div>
+            <div class="card-content grey lighten-4">
+                <h5>Menu</h5>
+                <div id="test4">
+                        <table >
+                                <thead>
+                                  <tr>
+                                      <th>Item Name</th>
+                                      <th>Item Price</th>
+                                  </tr>
+                                </thead>
+                        
+                                <tbody ng-repeat="m in cat.menu">
+                                  <tr >
+                                    <td>{{m.item}}</td>
+                                    <td>{{m.price}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                </div>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+                <p>{{cat.description}}</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    {{catSelected}}
+</div>

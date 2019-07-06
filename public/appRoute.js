@@ -9,6 +9,14 @@ myApp.config(function($routeProvider){
             templateUrl: 'templates/register.html',
             controller: 'appController'
         })
+        .when('/user/afterlogin',{
+            templateUrl: 'templates/productCat.html',
+            controller: 'loginController'
+        })
+        .when('/selectedCat/:range/:cat',{
+            templateUrl: 'templates/selectedCat.html',
+            controller: 'loginController'
+        })
         .otherwise({
             redirectTo: '/'
         });
