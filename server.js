@@ -41,7 +41,11 @@ const orderSchema = mongoose.Schema({
     user_email: String,
     menu: Object,
     vendor: String,
-    pending: Boolean
+    pending: Boolean,
+    od: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 const custSchema = mongoose.Schema({
@@ -176,4 +180,4 @@ app.get('/api/getOrder', (req, res) => {
     });
 });
 
-const server = app.listen(port, ip.address(), () => console.log("Listening to http://" + ip.address() +":" + port));
+const server = app.listen(port, () => console.log("Listening to http://localhost:" + port));

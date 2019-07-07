@@ -10,7 +10,7 @@
             <div class="card-content grey lighten-4">
                 <h5>Menu</h5>
                 <div id="test4">
-                        <table >
+                        <table> 
                           <thead>
                             <tr>
                                 <th>Item Name</th>
@@ -22,7 +22,7 @@
                           <tbody ng-repeat="m in cat.menu">
                             <tr>
                               <td>{{m.item}}</td>
-                              <td>{{m.price}}</td>
+                              <td>{{m.price}} &#8377;</td>
                               <td><input type="number" ng-model="m.qty" min="0" max="10" value="0"></td>
                             </tr>
                           </tbody>

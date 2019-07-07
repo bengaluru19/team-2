@@ -24,8 +24,8 @@
           <div class="container">
           <a href="#/" class="brand-logo">Udhyam</a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#/user/afterlogin" id="cat">Category</a></li>
-            <li><a href="#/user/orderHistory">Order History</a></li>
+            <li><a href="#/user/afterlogin"  style="color: white;">Category</a></li>
+            <li><a href="#/user/orderHistory" style="color: white;" >Order History</a></li>
             <li><a href="/user/logout" class="red-text text-lighten-2">Logout</a></li>
           </ul>
           </div>
@@ -33,8 +33,8 @@
       </nav>
 
       <ul class="sidenav indigo lighten-1" id="mobile-demo">
-          <li><a href="#/user/afterlogin">Category</a></li>
-          <li><a href="#/user/orderHistory">Order History</a></li>
+          <li><a href="#/user/afterlogin" id="ord"  style="color: white;"> Category</a></li>
+          <li><a href="#/user/orderHistory" id="cat"  style="color: white;">Order History</a></li>
           <li><a href="/user/logout" class="red-text text-lighten-2">Logout</a></li>
       </ul>
   <div class="container">
@@ -46,6 +46,10 @@
     });
 
     $('#cat').click(function(){
+      $('.sidenav').sidenav('close');
+    });
+
+    $('#ord').click(function(){
       $('.sidenav').sidenav('close');
     });
 
