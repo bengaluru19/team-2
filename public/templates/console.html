@@ -15,9 +15,11 @@
     <link rel="stylesheet" href="../stylesheets/index_style.css">
     <link rel="stylesheet" href="../materialize/css/materialize.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <script src="particles.js/dist/particles.min.js"></script>
+    
 </head>
 <body>
+    <div class="navbar-fixed">
     <nav class="indigo lighten-1">
         <div class="nav-wrapper">
           <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -31,15 +33,17 @@
           </div>
         </div>
       </nav>
-
+    </div>
+    
       <ul class="sidenav indigo lighten-1" id="mobile-demo">
           <li><a href="#/user/afterlogin" id="ord"  style="color: white;"> Category</a></li>
           <li><a href="#/user/orderHistory" id="cat"  style="color: white;">Order History</a></li>
           <li><a href="/user/logout" class="red-text text-lighten-2">Logout</a></li>
       </ul>
-  <div class="container">
-    <div ng-view></div>
-  </div>
+      <canvas class="background"></canvas>
+      <div class="container">
+        <div ng-view></div>
+      </div>
   <script type="text/javascript">  
     $(document).ready(function(){
       $('.sidenav').sidenav();
@@ -53,6 +57,34 @@
       $('.sidenav').sidenav('close');
     });
 
+  </script>
+  <script>
+      window.onload = function() {
+      Particles.init({
+          selector: '.background',
+          color:['#DA0463', '#404B69', '#DBEDF3'],
+          responsive: [
+              {
+                breakpoint: 1920,
+                options: {
+                  maxParticles: 150,
+                  connectParticles: true
+                }
+              }, {
+                breakpoint: 425,
+                options: {
+                  maxParticles: 50,
+                  connectParticles: false
+                }
+              }, {
+                breakpoint: 320,
+                options: {
+                  maxParticles: 0
+                }
+              }
+            ] 
+      });
+  }; 
   </script>
 </body>
 </html>
