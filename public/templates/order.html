@@ -1,0 +1,34 @@
+<h5>Your order history</h5>
+
+<div ng-init="getOrders()">
+        <table>
+                <thead>
+                  <tr>
+                      <th>Vendor Name</th>
+                      <th>Menu Details</th>
+                      <th>Confirmation</th>
+                  </tr>
+                </thead>
+        
+                <tbody ng-repeat="g in gotOrderData">
+                  <tr>
+                    <td>{{g.vendor}}</td>
+                    <td>
+                        <ul ng-repeat="men in g.menu">
+                            <li> Name: {{men.item}}  </li>
+                            <li> Price: {{men.price}} &#8377; </li>
+                            <li> Quantity: {{men.qty}}  </li>
+                            <li> Total: <b>{{men.price * men.qty}} &#8377; </b></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div ng-if="g.pending">
+                            Pending
+                        </div>
+                        <div ng-if="!g.pending">
+                            Confirmed
+                        </div>
+                  </tr>
+                </tbody>
+              </table>
+</div>

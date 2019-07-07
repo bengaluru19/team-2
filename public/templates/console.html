@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="angular-1.5.8/angular.min.js"></script>
-    <script src="angular-1.5.8/angular-route.min.js"></script>
-    <script src="angular-1.5.8/angular-animate.min.js"></script>
-    <script src="materialize/js/materialize.min.js"></script>
-    <script src="indexRoute.js"></script>
-    <script src="controller.js"></script>
-    <link rel="stylesheet" href="stylesheets/index_style.css">
-    <link rel="stylesheet" href="materialize/css/materialize.min.css" />
+    <script src="../angular-1.5.8/angular.min.js"></script>
+    <script src="../angular-1.5.8/angular-route.min.js"></script>
+    <script src="../angular-1.5.8/angular-animate.min.js"></script>
+    <script src="../materialize/js/materialize.min.js"></script>
+    <script src="../appRoute.js"></script>
+    <script src="../controller.js"></script>
+    <link rel="stylesheet" href="../stylesheets/index_style.css">
+    <link rel="stylesheet" href="../materialize/css/materialize.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
@@ -22,19 +22,21 @@
         <div class="nav-wrapper">
           <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <div class="container">
-          <a href="#/login" class="brand-logo">Udhyam</a>
+          <a href="#/" class="brand-logo">Udhyam</a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#/user/register">Register</a></li>
-            <li><a href="#/login">Login</a></li>
+            <li><a href="#/user/afterlogin" id="cat">Category</a></li>
+            <li><a href="#/user/orderHistory">Order History</a></li>
+            <li><a href="/user/logout" class="red-text text-lighten-2">Logout</a></li>
           </ul>
           </div>
         </div>
       </nav>
 
       <ul class="sidenav indigo lighten-1" id="mobile-demo">
-            <li><a href="#/user/register" id="reg">Register</a></li>
-            <li><a href="#/login" id="log">Login</a></li>
-        </ul>
+          <li><a href="#/user/afterlogin">Category</a></li>
+          <li><a href="#/user/orderHistory">Order History</a></li>
+          <li><a href="/user/logout" class="red-text text-lighten-2">Logout</a></li>
+      </ul>
   <div class="container">
     <div ng-view></div>
   </div>
@@ -43,13 +45,10 @@
       $('.sidenav').sidenav();
     });
 
-    $('#reg').click(function(){
+    $('#cat').click(function(){
       $('.sidenav').sidenav('close');
     });
 
-    $('#log').click(function(){
-      $('.sidenav').sidenav('close');
-    });
   </script>
 </body>
 </html>

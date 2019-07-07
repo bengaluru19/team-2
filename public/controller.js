@@ -1,8 +1,5 @@
 myApp.controller('appController', function($scope, $http, $route){
-    
-
     $scope.errMatch = false;
-
     $scope.register = function(){
         $scope.registerData = {
             fname: $scope.fname,
@@ -49,7 +46,24 @@ myApp.controller('loginController', function($scope, $http, $route, $routeParams
         const range = $routeParams.range;
 
         $http.get('/api/getSelectedCat/' + cat).then(res => {
-            $scope.catSelected = res.data;
+            $scope.catSelect = res.data;
         });
+    }
+
+    $scope.submitOrder = function(menu, name){
+        const data = {
+            menu: menu,
+            name: name
+        }
+        // console.log(menu, name);
+        $http.post('/api/user/ordered/', data).then(res => {
+            window.location.href = "#/user/orderHistory"
+        });
+    }
+
+    $scope.getOrders = function(){
+        $http.get('/api/getOrder').then(res => {
+            $scope.gotOrderData = res.data;
+        })
     }
 });
