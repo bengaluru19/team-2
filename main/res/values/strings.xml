@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CodeForGood</string>
+    <string name="continue1">Continue</string>
+    <string name="login1">LOGIN</string>
+    <string name="sign_up1">SIGN UP</string>
+    <string name="orders_received">ORDERS RECEIVED</string>
+    <string name="pending_deliveries">PENDING DELIVERIES</string>
+    <string name="my_earning">MY EARNING</string>
+</resources>

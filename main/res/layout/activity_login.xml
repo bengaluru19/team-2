@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".loginActivity"
+    android:background="@drawable/shop">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="Phone Number"
+        android:textColor="@android:color/black"
+        android:id="@+id/phnologin"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="E-MailId"
+        android:textColor="@android:color/black"
+        android:id="@+id/emlogin"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="4 Digit Pin"
+        android:textColor="@android:color/black"
+        android:id="@+id/dig4login"
+        />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+    <Button
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/vlogin"
+        android:text="LOGIN"
+        />
+        <Button
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+            android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/forgot"
+        android:text="Forgot Password"
+        />
+    </LinearLayout>
+</LinearLayout>
